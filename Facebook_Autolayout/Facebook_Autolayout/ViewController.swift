@@ -17,6 +17,11 @@ class ViewController: UIViewController {
     
     var center: CGPoint?
     
+    /// va être appelé dès que une vue principale de la UIView va devoir mettre à jour le layout des sous-vues. Donc la profileIV sera toujours arrondie.
+    override func viewWillLayoutSubviews() {
+        profileIV.layer.cornerRadius = profileIV.frame.width / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
